@@ -1,11 +1,13 @@
 package project.fbatuq.model.dto;
 
 public class UserDTO {
+
     private Long id;
     private String name;
     private String surname;
     private String login;
     private String password;
+    private boolean isAdmin;
 
     public Long getId() {
         return id;
@@ -45,5 +47,13 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 }

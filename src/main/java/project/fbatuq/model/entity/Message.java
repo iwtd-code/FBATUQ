@@ -1,9 +1,6 @@
 package project.fbatuq.model.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 @Entity
 public class Message {
@@ -15,6 +12,8 @@ public class Message {
     private boolean visibility;
     private Long topicId;
     private Timestamp creatingDate;
+    @ManyToOne
+    private User user;
 
     public Long getId() {
         return id;

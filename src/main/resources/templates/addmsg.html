@@ -1,11 +1,17 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Add new message</title>
 </head>
 <body>
+<form th:action="@{/addmsg}" method="post" th:object="${newMessage}">
+    <p>New message: <input type="text" th:field="*{text}"/></p>
+
+    <p><input type="submit" value="Submit"/></p>
+    <p><input type="reset" value="Reset"/></p>
+
+</form>
 
 </body>
 </html>

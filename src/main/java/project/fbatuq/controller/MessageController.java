@@ -24,5 +24,10 @@ public class MessageController {
         return new ModelAndView("addmsg", "newMessage", new MessageDTO());
     }
 
-
+    @PostMapping("/addmsg")
+    public String addNewMessage(@ModelAttribute MessageDTO messageDTO){
+        System.out.println(messageDTO.getText());
+        messageService.addMessage(messageDTO);
+        return "index";
+    }
 }

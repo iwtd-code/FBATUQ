@@ -11,4 +11,9 @@ public class IndexController {
     public ModelAndView index() {
         return new ModelAndView("index");
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 }

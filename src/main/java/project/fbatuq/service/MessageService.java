@@ -7,6 +7,9 @@ import project.fbatuq.model.dto.MessageDTO;
 import project.fbatuq.model.entity.Message;
 import project.fbatuq.repository.MessageRepository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class MessageService {
 
@@ -31,5 +34,12 @@ public class MessageService {
         repository.save(message);
     }
 
+    public List<MessageDTO> getAllVisibleMessages() {
+        //!!!!!DO ZROBIENIA - jak dostać z bazy tylko te wiadomości co widoczne dla przekazanego usera
+        return repository.findAll()
+                .stream()
+                .map(msg -> modelMapper.map(msg, MessageDTO.class))
+                .collect(Collectors.toList());
+    }
 
 }

@@ -6,8 +6,7 @@ public class MessageDTO {
     private Long id;
     private String text;
     private boolean deleted;
-    private boolean visibility;
-    private Long topicId;
+    private boolean isVisible;
     private Timestamp creatingDate;
 
     public Long getId() {
@@ -34,20 +33,12 @@ public class MessageDTO {
         this.deleted = deleted;
     }
 
-    public boolean isVisibility() {
-        return visibility;
+    public boolean isVisible() {
+        return isVisible;
     }
 
-    public void setVisibility(boolean visibility) {
-        this.visibility = visibility;
-    }
-
-    public Long getTopicId() {
-        return topicId;
-    }
-
-    public void setTopicId(Long topicId) {
-        this.topicId = topicId;
+    public void setVisible(boolean visible) {
+        this.isVisible = visible;
     }
 
     public Timestamp getCreatingDate() {

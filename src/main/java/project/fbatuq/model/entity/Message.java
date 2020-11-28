@@ -9,8 +9,7 @@ public class Message {
     private Long id;
     private String text;
     private boolean deleted;
-    private boolean visibility;
-    private Long topicId;
+    private boolean isVisible;
     private Timestamp creatingDate;
     @ManyToOne
     private User user;
@@ -39,20 +38,12 @@ public class Message {
         this.deleted = deleted;
     }
 
-    public boolean isVisibility() {
-        return visibility;
+    public boolean isIsVisible() {
+        return isVisible;
     }
 
-    public void setVisibility(boolean visibility) {
-        this.visibility = visibility;
-    }
-
-    public Long getTopicId() {
-        return topicId;
-    }
-
-    public void setTopicId(Long topicId) {
-        this.topicId = topicId;
+    public void setIsVisible(boolean isVisible) {
+        this.isVisible = isVisible;
     }
 
     public Timestamp getCreatingDate() {

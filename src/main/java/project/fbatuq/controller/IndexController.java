@@ -16,4 +16,9 @@ public class IndexController {
     public String login(){
         return "login";
     }
+
+    @GetMapping("/about")
+    public ModelAndView about() {
+        return new ModelAndView("about");
+    }
 }

@@ -18,7 +18,7 @@ public class IndexController {
     }
 
     @GetMapping("/about")
-    public ModelAndView about() {
-        return new ModelAndView("about");
+    public String about(){
+        return "about";
     }
 }

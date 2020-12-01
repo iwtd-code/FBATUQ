@@ -6,11 +6,15 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
     <persistence-unit name="persistence-jpa">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
+        <class>project.fbatuq.model.entity.User</class>
+        <class>project.fbatuq.model.entity.Message</class>
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/javakrk26"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/FBATUQ"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.password" value="Paramka32//"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
             <property name="eclipselink.jpa.uppercase-column-names" value="true"/>
         </properties>
     </persistence-unit>

@@ -6,11 +6,8 @@ import org.springframework.stereotype.Service;
 import project.fbatuq.model.dto.MessageDTO;
 import project.fbatuq.model.entity.Message;
 import project.fbatuq.repository.MessageRepository;
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.apache.tomcat.jni.Time.now;
 
 @Service
 public class MessageService {
@@ -32,7 +29,6 @@ public class MessageService {
         Message message = modelMapper.map(messageDTO, Message.class);
 
         System.out.println("New message: " + message.getText());
-        message.setCreatingDate(new Timestamp(now()));
         repository.save(message);
     }
 

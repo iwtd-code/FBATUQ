@@ -3,6 +3,7 @@ package project.fbatuq.model.entity;
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Entity
+@Table(name = "Message")
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -6,7 +5,27 @@
     <title>Messages</title>
 </head>
 <body>
-message
-
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">text</th>
+        <th scope="col">Creating Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="message: ${messageDTOList}">
+        <form action="/msg" method="get" th:object="${message}">
+            <td type="number" th:text="${message.id}"/>
+            <td th:text="${message.text}"/>
+            <td th:datetime="${message.creatingDate}"/>
+            <td>
+                <input type="hidden" name="id" th:value="${message.id}"/>
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

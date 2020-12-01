@@ -34,11 +34,10 @@ public class MessageController {
         messageService.addMessage(messageDTO);
         return "index";
     }
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
     @GetMapping("/msg")
-    public ModelAndView getAllVisibleMsgs() {
-        List<MessageDTO> messageDTOList = messageService.getAllVisibleMessages(authentication);
-        return new ModelAndView("msg", "msgList", messageDTOList);
+    public ModelAndView getAllMsgs() {
+        List<MessageDTO> messageDTOList = messageService.getAllMessages();
+        return new ModelAndView("msg", "messageDTOList", messageDTOList);
     }
 }

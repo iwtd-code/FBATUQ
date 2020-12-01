@@ -37,6 +37,7 @@ public class MessageService {
     }
 
     public List<MessageDTO> getAllMessages() {
+
         return repository.findAll()
                 .stream()
                 .map(message -> modelMapper.map(message, MessageDTO.class))

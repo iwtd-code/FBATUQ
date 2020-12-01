@@ -5,8 +5,6 @@ import java.sql.Timestamp;
 public class MessageDTO {
     private Long id;
     private String text;
-    private boolean deleted;
-    private boolean isVisible;
     private Timestamp creatingDate;
 
     public Long getId() {
@@ -23,22 +21,6 @@ public class MessageDTO {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    public boolean isVisible() {
-        return isVisible;
-    }
-
-    public void setVisible(boolean visible) {
-        this.isVisible = visible;
     }
 
     public Timestamp getCreatingDate() {

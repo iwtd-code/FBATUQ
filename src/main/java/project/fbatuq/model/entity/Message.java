@@ -8,8 +8,6 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String text;
-    private boolean deleted;
-    private boolean isVisible;
     private Timestamp creatingDate;
     @ManyToOne
     private User user;
@@ -28,22 +26,6 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
-    public boolean isIsVisible() {
-        return isVisible;
-    }
-
-    public void setIsVisible(boolean isVisible) {
-        this.isVisible = isVisible;
     }
 
     public Timestamp getCreatingDate() {

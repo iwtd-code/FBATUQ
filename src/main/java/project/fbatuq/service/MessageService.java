@@ -8,13 +8,11 @@ import project.fbatuq.model.dto.MessageDTO;
 import project.fbatuq.model.entity.Message;
 import project.fbatuq.repository.MessageRepository;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
-import javax.persistence.criteria.Root;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
+
+import static org.apache.tomcat.jni.Time.now;
 
 @Service
 public class MessageService {
@@ -36,7 +34,7 @@ public class MessageService {
         Message message = modelMapper.map(messageDTO, Message.class);
 
         System.out.println("New message: " + message.getText());
-
+        message.setCreatingDate(new Timestamp(now()));
         repository.save(message);
     }
 
@@ -45,7 +43,7 @@ public class MessageService {
         if (authentication == null) {
 
         }
-
+        return null;
     }
 
 }

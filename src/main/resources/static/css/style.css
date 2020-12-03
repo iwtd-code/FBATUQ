@@ -11,3 +11,25 @@ div{
     color: white;
 
 }
+
+.button {
+    border-radius: 15px;
+    background-color: yellowgreen;
+    color: red;
+    font-size: 15px;
+    font-weight:bold;
+    text-align: center;
+    border: 5px solid black;
+    padding: 2px 12px;
+}
+
+.buttonDelete {
+    border-radius: 15px;
+    background-color: red;
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight:bold;
+    text-align: center;
+    border: 5px solid black;
+    padding: 2px 12px;
+}

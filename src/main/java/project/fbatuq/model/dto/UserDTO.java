@@ -7,7 +7,6 @@ public class UserDTO {
     private String surname;
     private String login;
     private String password;
-    private boolean isAdmin;
 
     public Long getId() {
         return id;
@@ -49,11 +48,4 @@ public class UserDTO {
         this.password = password;
     }
 
-    public boolean isAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(boolean admin) {
-        isAdmin = admin;
-    }
 }

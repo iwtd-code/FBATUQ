@@ -2,23 +2,25 @@ package project.fbatuq.model.entity;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+
 @Entity
-@Table(name = "Message")
+@Table(name = "messages")
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String text;
-    private Timestamp creatingDate;
-    @ManyToOne
-    private User user;
 
-    public Long getId() {
-        return id;
+    private String text;
+
+    private Timestamp timestamp;
+
+    public Message() {
     }
 
-    public void setId(Long id) {
+    public Message(Long id, String text, Timestamp timestamp) {
         this.id = id;
+        this.text = text;
+        this.timestamp = timestamp;
     }
 
     public String getText() {
@@ -29,11 +31,21 @@ public class Message {
         this.text = text;
     }
 
-    public Timestamp getCreatingDate() {
-        return creatingDate;
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
-    public void setCreatingDate(Timestamp creatingDate) {
-        this.creatingDate = creatingDate;
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "Message{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", timestamp=" + timestamp +
+                '}';
+    }
+
 }

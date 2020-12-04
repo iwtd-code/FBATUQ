@@ -40,4 +40,8 @@ public class MessageService {
                 .collect(Collectors.toList());
     }
 
+    public void deleteMessage(Long id){
+        repository.deleteById(id);
+    }
+
 }

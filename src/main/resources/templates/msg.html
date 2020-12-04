@@ -6,6 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
+<div><h2>MESSAGE:</h2></div>
 <div >
 <span th:each="message : ${messageDTOList}">
         <form action="/deletemsg" method="post" th:object="${message}">

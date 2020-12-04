@@ -6,14 +6,14 @@
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<div><h2>MESSAGE:</h2></div>
+<div><h1 class="header">MESSAGES:</h1></div>
 <div >
 <span th:each="message : ${messageDTOList}">
         <form action="/deletemsg" method="post" th:object="${message}">
             <span type="hidden" th:id="${message.id}"/>
-            <span th:text="${message.timestamp}"/>
+            <span class="msg" th:text="${message.timestamp}"/><hr>
             <div>
-            <span th:text="${message.text}"/>
+            <span class="msgdate" th:text="${message.text}"/>
             </div>
                 <br>
             <span>

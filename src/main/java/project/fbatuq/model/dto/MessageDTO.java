@@ -5,7 +5,15 @@ import java.sql.Timestamp;
 public class MessageDTO {
     private Long id;
     private String text;
-    private Timestamp creatingDate;
+    private Timestamp timestamp;
+
+    @Override
+    public String toString() {
+        return "MessageDTO{" +
+                "text='" + text + '\'' +
+                ", creatingDate=" + timestamp +
+                '}';
+    }
 
     public Long getId() {
         return id;
@@ -23,11 +31,11 @@ public class MessageDTO {
         this.text = text;
     }
 
-    public Timestamp getCreatingDate() {
-        return creatingDate;
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
-    public void setCreatingDate(Timestamp creatingDate) {
-        this.creatingDate = creatingDate;
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 }

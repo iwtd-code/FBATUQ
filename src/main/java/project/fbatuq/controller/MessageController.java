@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 import project.fbatuq.model.dto.MessageDTO;
 import project.fbatuq.service.MessageService;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 
@@ -28,7 +30,8 @@ public class MessageController {
 
     @PostMapping("/addmsg")
     public String addNewMessage(@ModelAttribute MessageDTO messageDTO){
-        System.out.println(messageDTO.getText());
+        messageDTO.setTimestamp(Timestamp.valueOf(LocalDateTime.now()));
+        System.out.println(messageDTO);
         messageService.addMessage(messageDTO);
         return "redirect:/addmsg";
     }

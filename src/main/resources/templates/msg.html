@@ -10,8 +10,8 @@
 <div >
 <span th:each="message : ${messageDTOList}">
         <form action="/deletemsg" method="post" th:object="${message}">
-            <span type="hidden" th:text="${message.id}"/>
-            <span th:datetime="${message.creatingDate}"/>
+            <span type="hidden" th:id="${message.id}"/>
+            <span th:text="${message.timestamp}"/>
             <div>
             <span th:text="${message.text}"/>
             </div>

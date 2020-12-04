@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Add new message</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
-<body>
-<form th:action="@{/addmsg}" method="post" th:object="${newMessage}">
+<body >
+<form th:action="@{/addmsg}" method="post" th:object="${newMessage}" >
+
     <p>New message: <input type="text" th:field="*{text}"/></p>
 
-    <p><input type="submit" value="Submit"/></p>
-    <p><input type="reset" value="Reset"/></p>
+    <p><input class="button" type="submit" value="addmessage"/></p>
+
 
 </form>
 

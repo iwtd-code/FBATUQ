@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Messages</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
-<table class="table">
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">id</th>
-        <th scope="col">text</th>
-        <th scope="col">Creating Date</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="message: ${messageDTOList}">
-        <form action="/msg" method="get" th:object="${message}">
-            <td type="number" th:text="${message.id}"/>
-            <td th:text="${message.text}"/>
-            <td th:datetime="${message.creatingDate}"/>
-            <td>
+<div >
+<span th:each="message : ${messageDTOList}">
+        <form action="/deletemsg" method="post" th:object="${message}">
+            <span type="hidden" th:text="${message.id}"/>
+            <span th:datetime="${message.creatingDate}"/>
+            <div>
+            <span th:text="${message.text}"/>
+            </div>
+                <br>
+            <span>
                 <input type="hidden" name="id" th:value="${message.id}"/>
-                <button type="submit" class="btn btn-danger">Remove</button>
-            </td>
+                <button class="buttonDelete" type="submit">Remove</button>
+            </span>
         </form>
-    </tr>
-    </tbody>
-</table>
+    </span>
+</div>
 </body>
 </html>

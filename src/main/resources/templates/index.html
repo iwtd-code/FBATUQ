@@ -2,29 +2,36 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
-
-<h1>Find Best Answer To Your Question</h1>
-<br><br><br>
+<header> Find Best Answer To Your Question</header>
+<hr>
+<br>
 <div>
-    <form action="/login">
-        <button type="submit">LOGIN</button>
-    </form>
-    <br>
-    <form action="/msg">
-        <button type="submit">MESSAGE</button>
-        <BR>
-    </form>
-    <BR>
-    <form action="/addmsg">
-        <button class="button" type="submit">ADD NEW MESSAGE</button>
-    </form>  <form action="/about">
+    <!--        <form action="/login">-->
+    <!--            <button class="button" type="submit">LOGIN</button>-->
+    <!--        </form>-->
+    <!--        <BR>-->
+    <!--        <form action="/msg">-->
+    <!--            <button class="button" type="submit">MESSAGE</button>-->
+    <!--        </form>-->
+
+
+    <form action="/about">
+
+
         <button class="button" type="submit">ABOUT</button>
     </form>
 </div>
+
+
+<object data="/addmsg" title="addmsg" width="100%"></object>
+<div><h2>MESSAGES:</h2></div>
+<div><object  data="/msg" title="addmsg" width="100%" height="600" ></object></div>
+
 
 
 </body>

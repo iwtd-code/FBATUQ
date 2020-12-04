@@ -1,26 +1,62 @@
-h1{
+header {
+    background-color: dimgrey;
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
     color: goldenrod;
 }
+
+nav {
+    float: left;
+    width: available;
+    height: auto;
+    background: grey;
+    padding: 20px;
+}
+
+article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    height: auto;
+    background-color: lightgray;
+
+}
+
+section:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+footer {
+    background-color: dimgrey;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+
 
 body {
     background-color: dimgrey;
 }
 
-div{
-
-    color: white;
-
-}
-
 .button {
     border-radius: 15px;
-    background-color: yellowgreen;
-    color: red;
+    background-color: lightslategray;
+    color: black;
     font-size: 15px;
     font-weight:bold;
     text-align: center;
-    border: 5px solid black;
+    border: 3px solid black;
     padding: 2px 12px;
+
+}
+
+.button:hover {
+    background-color: black;
+    color: lightslategray;
 }
 
 .buttonDelete {
@@ -30,6 +66,11 @@ div{
     font-size: 15px;
     font-weight:bold;
     text-align: center;
-    border: 5px solid black;
+    border: 3px solid black;
     padding: 2px 12px;
+}
+
+.buttonDelete:hover {
+    background-color: whitesmoke;
+    color: red;
 }

@@ -30,7 +30,7 @@ public class MessageController {
     public String addNewMessage(@ModelAttribute MessageDTO messageDTO){
         System.out.println(messageDTO.getText());
         messageService.addMessage(messageDTO);
-        return "index";
+        return "redirect:/addmsg";
     }
 
     @GetMapping("/msg")
@@ -38,4 +38,10 @@ public class MessageController {
         List<MessageDTO> messageDTOList = messageService.getAllMessages();
         return new ModelAndView("msg", "messageDTOList", messageDTOList);
     }
+    @PostMapping("/deletemsg")
+    public String deleteMessage(@ModelAttribute MessageDTO messageDTO){
+        messageService.deleteMessage(messageDTO.getId());
+        return "redirect:/msg";
+    }
+
 }

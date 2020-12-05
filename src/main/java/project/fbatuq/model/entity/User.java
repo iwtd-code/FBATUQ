@@ -1,6 +1,8 @@
 package project.fbatuq.model.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -13,15 +15,19 @@ public class User {
     private String login;
     private String password;
 
+    @OneToMany
+    private List<Message> messageList = new ArrayList<>();
+
     public User() {
     }
 
-    public User(Long id, String name, String surname, String login, String password) {
+    public User(Long id, String name, String surname, String login, String password, List<Message> messageList) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.login = login;
         this.password = password;
+        this.messageList = messageList;
     }
 
     @Override
@@ -31,7 +37,6 @@ public class User {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
                 '}';
     }
 
@@ -75,4 +80,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public List<Message> getMessageList() {
+        return messageList;
+    }
+
 }

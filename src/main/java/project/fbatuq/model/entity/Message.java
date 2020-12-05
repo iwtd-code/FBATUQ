@@ -12,13 +12,17 @@ public class Message {
     private String text;
     private Timestamp timestamp;
 
+    @ManyToOne
+    private User user;
+
     public Message() {
     }
 
-    public Message(Long id, String text, Timestamp timestamp) {
+    public Message(Long id, String text, Timestamp timestamp, User user) {
         this.id = id;
         this.text = text;
         this.timestamp = timestamp;
+        this.user = user;
     }
 
     public Long getId() {
@@ -45,13 +49,21 @@ public class Message {
         this.timestamp = timestamp;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Message{" +
                 "id=" + id +
                 ", text='" + text + '\'' +
                 ", timestamp=" + timestamp +
+                ", user=" + user +
                 '}';
     }
-
 }

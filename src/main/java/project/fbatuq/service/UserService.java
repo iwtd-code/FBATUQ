@@ -24,4 +24,8 @@ public class UserService {
         repository.save(user);
     }
 
+    public User findUserByLogin(String login) {
+        return repository.findUserByLogin(login);
+    }
+
 }

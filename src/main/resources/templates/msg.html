@@ -11,7 +11,8 @@
 <span th:each="message : ${messageDTOList}">
         <form action="/deletemsg" method="post" th:object="${message}">
             <span type="hidden" th:id="${message.id}"/>
-            <span class="msg" th:text="${message.timestamp}"/><hr>
+            <span class="msg" th:text="${message.timestamp}"/>
+            <span class="msg" th:text="${message.getUser().getLogin()}"/>
             <div>
             <span class="msgdate" th:text="${message.text}"/>
             </div>

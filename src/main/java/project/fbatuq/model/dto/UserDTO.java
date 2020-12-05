@@ -1,5 +1,8 @@
 package project.fbatuq.model.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserDTO {
 
     private Long id;
@@ -7,6 +10,7 @@ public class UserDTO {
     private String surname;
     private String login;
     private String password;
+    private List<MessageDTO> messageDTOS = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -48,4 +52,7 @@ public class UserDTO {
         this.password = password;
     }
 
+    public List<MessageDTO> getMessageDTOS() {
+        return messageDTOS;
+    }
 }

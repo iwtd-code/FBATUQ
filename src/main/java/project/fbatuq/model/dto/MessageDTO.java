@@ -1,17 +1,22 @@
 package project.fbatuq.model.dto;
 
+import project.fbatuq.model.entity.User;
+
 import java.sql.Timestamp;
 
 public class MessageDTO {
     private Long id;
     private String text;
     private Timestamp timestamp;
+    private User user;
 
     @Override
     public String toString() {
         return "MessageDTO{" +
-                "text='" + text + '\'' +
-                ", creatingDate=" + timestamp +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", timestamp=" + timestamp +
+                ", user=" + user +
                 '}';
     }
 
@@ -38,4 +43,13 @@ public class MessageDTO {
     public void setTimestamp(Timestamp timestamp) {
         this.timestamp = timestamp;
     }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
 }

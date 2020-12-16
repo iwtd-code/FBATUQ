@@ -17,7 +17,13 @@
 
     <button class="button" type="submit">Login</button>
 
+    <span th:action="@{/logout}" th:method="post">
+    <button class="button" type="submit">LOGOUT</button>
+    </span>
+    <span class="msg" th:text="'Logged: ' + ${userLogin}"></span>
 </form>
+
+
 
 </body>
 </html>

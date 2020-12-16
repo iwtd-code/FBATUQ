@@ -1,9 +1,18 @@
-header {
-    background-color: dimgrey;
-    padding: 30px;
+.buttonHeader {
+    background-color: black;
+    border-radius: 5px;
     text-align: center;
     font-size: 30px;
     color: goldenrod;
+    font-weight:bold;
+    border: 10px white;
+
+
+}
+
+.buttonHeader:hover {
+    background-color: goldenrod;
+    color: black;
 }
 
 nav {
@@ -75,7 +84,8 @@ body {
     color: red;
 }
 
-.msg, .msgdate {
+.msg, .msgdate, .text{
     color: greenyellow;
-    font-size: 33px;
+    font-size: 25px;
 }
+

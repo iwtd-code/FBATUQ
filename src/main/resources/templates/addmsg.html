@@ -5,8 +5,17 @@
     <title>Add new message</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
-<body >
-<form th:action="@{/addmsg}" method="post" th:object="${newMessage}" >
+<body>
+<header>
+    <center>
+        <form action="/">
+            <button class="buttonHeader" type="submit">Find Best Answer To Your Question</button>
+        </form>
+    </center>
+</header>
+<hr>
+<br>
+<form th:action="@{/addmsg}" method="post" th:object="${newMessage}">
 
     <p>New message: <input type="text" th:field="*{text}"/></p>
 

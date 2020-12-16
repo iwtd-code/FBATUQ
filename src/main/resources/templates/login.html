@@ -15,12 +15,13 @@
     <label for="inputPassword">Password</label>
     <input type="password" id="inputPassword" name="password" placeholder="password"/>
 
-    <button class="button" type="submit">Login</button>
+    <button class="button" type="submit">LOGIN</button>
 
     <span th:action="@{/logout}" th:method="post">
     <button class="button" type="submit">LOGOUT</button>
     </span>
-    <span class="msg" th:text="'Logged: ' + ${userLogin}"></span>
+
+    <span class="text" th:text="'Logged: ' + ${userLogin}"></span>
 </form>
 
 
